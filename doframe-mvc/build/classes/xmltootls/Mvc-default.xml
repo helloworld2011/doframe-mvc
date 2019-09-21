@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Mvc>
+	<package name="mvcdefault" namespace="">
+		<!-- 配置拦截器 -->
+		<interceptor name="encoding" class="interceptor.EncodingInterceptor" />
+		<interceptor name="readxml" class="" />
+		<interceptor name="requestprocess" class="" />
+		<!-- 配置拦截器栈,拦截器栈中存放的是拦截器 -->
+		<interceptor-stack name="defaultStack">
+			<interceptor-ref name="encoding" />
+		</interceptor-stack>
+		<!-- 配置默认的拦截器栈 -->
+		<defaultstack name="defaultStack"/>
+	</package>
+</Mvc>

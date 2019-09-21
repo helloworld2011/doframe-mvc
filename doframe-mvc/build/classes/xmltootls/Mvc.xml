@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Mvc>
+	<include file=""/>  
+	<!-- extends 可以访问父节点xml内容  -->
+	<package name="mvc" namespace="" extends="Mvc-default">
+		<interceptor name="userinterceptor" class=""/>
+		<interceptor-stack name="userstack">
+			<interceptor-ref name="userinterceptor"/>
+		</interceptor-stack>
+		<!--访问user_action的时候会经过过滤器栈,过滤器栈由过滤器组成    -->
+		<action name="user_*" method="{1}" class="">
+			<result name="">login.jsp</result>
+			<result name="" type="redirect"></result>
+			<interceptorstack-ref name="userstack"/>
+			<interceptor-ref name="userinterceptor"/>
+		</action>
+	</package>
+</Mvc>
